@@ -17,3 +17,17 @@ if __name__ == '__main__':
 
 # FIXME https://www.geeksforgeeks.org/python-convert-speech-to-text-and-text-to-speech/
 # FIXME https://www.geeksforgeeks.org/convert-text-speech-python/
+
+
+import pyttsx3
+engine = pyttsx3.init()
+
+for voice in engine.getProperty('voices'):
+    print(voice)
+
+engine.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0")
+engine.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ES-ES_HELENA_11.0")
+
+engine.say("Hi my name is tiki tiki slim shady")
+engine.runAndWait()
+
